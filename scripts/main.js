@@ -33,9 +33,9 @@ fetch("http://localhost:8088/food")
     .then(myParsedFoods => {
         myParsedFoods.forEach(food => {
             console.log(food) // Should have a `barcode` property
-
+            let barcode = food.barcode
             // Now fetch the food from the Food API
-           fetch(`https://world.openfoodfacts.org/api/v0/product/${food.barcode}.json`)
+           fetch(`https://world.openfoodfacts.org/api/v0/product/${barcode}.json`)
                 .then(response => response.json())
                 .then(productInfo => {
                     if (productInfo.product.ingredients_text) {
