@@ -3,36 +3,36 @@
       {
         "id": 1,
         "name": "Linguine",
-        "category": "pasta",
-        "ethnicity": "italian",
+        "category": "Pasta",
+        "ethnicity": "Italian",
         "barcode": "011225032189"
       },
       {
         "id": 2,
         "name": "Massaman curry",
-        "category": "curry",
-        "ethnicity": "thai",
+        "category": "Curry",
+        "ethnicity": "Thai",
         "barcode": "016229008635"
       },
       {
         "id": 3,
         "name": "Green curry",
-        "category": "curry",
-        "ethnicity": "thai",
+        "category": "Curry",
+        "ethnicity": "Thai",
         "barcode": "041224872400"
       },
       {
         "id": 4,
         "name": "Ravioli Funghi",
-        "category": "pasta",
-        "ethnicity": "italian",
+        "category": "Pasta",
+        "ethnicity": "Italian",
         "barcode": "877448002435"
       },
       {
         "id": 5,
         "name": "Tuscan Soup",
-        "category": "vegetarian",
-        "ethnicity": "italian",
+        "category": "Vegetarian",
+        "ethnicity": "Italian",
         "barcode": "011150479547"
       }
     ]

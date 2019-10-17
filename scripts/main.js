@@ -1,28 +1,12 @@
-// const foodFactory = (food) => {
-//    return `<div class="foodListItems"> 
-//    <h1>${food.name}</h1>
-//     <section">${food.ethnicity} ${food.category}</section>
-//     </div>`
-// }
-
-// fetch("http://localhost:8088/food")
-
-
-// .then(foods => foods.json())
-
-// .then(parsedFoods => {
-//     parsedFoods.forEach(food => {
-//     console.log(foodFactory(food))
-//     const foodContainer = document.querySelector(".foodList")
-//     foodContainer.innerHTML += foodFactory(food)
-//     })
-// })
-
-
 const foodFactory = (food) => {
     return `<div class="foodListItems"> 
        <h1>${food.name}</h1>
-        <section">${food.ethnicity} ${food.category}</section>
+        <section>${food.ethnicity} ${food.category}</section>
+       <section>Ingredients: ${food.ingredients}</section>  
+       <section>Countries: ${food.countries}</section>
+       <section>Calories Per Serving: ${food.calories}</section>
+       <section>Fat Per Serving: ${food.fat}g</section>
+       <section>Sugar Per Serving: ${food.sugar}g</section>
         </div>`
 }
 
@@ -43,12 +27,35 @@ fetch("http://localhost:8088/food")
                     } else {
                         food.ingredients = "no ingredients listed"
                     }
+                    
+                    if (productInfo.product.countries) {
+                        food.countries = productInfo.product.countries
+                    } else {
+                        food.countries = "no countries listed"
+                    }
 
+                    if (productInfo.product.calories) {
+                        food.calories = productInfo.product.calories
+                    } else {
+                        food.calories = "no calories listed"
+                    }
+
+                    if (productInfo.product.nutriments.sugars) {
+                        food.sugar = productInfo.product.nutriments.sugars
+                    } else {
+                        food.sugar = "no sugars listed"
+                    }
+
+                    if (productInfo.product.nutriments.fat) {
+                        food.fat = productInfo.product.nutriments.fat
+                    } else {
+                        food.fat = "no fats listed"
+                    }
+                    
                     // // Produce HTML representation
                     const foodAsHTML = foodFactory(food)
 
                     // // Add representaiton to DOM
-                    // addFoodToDom(foodAsHTML)
                     const foodContainer = document.querySelector(".foodList")
                     foodContainer.innerHTML += foodAsHTML
                 })
